@@ -4,7 +4,10 @@
   "description": "This thing is an attempt to create a calculator with help of React for practising skills",
   "main": "index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "eslint": "eslint --ext .jsx --ext .js src/",
+    "build": "webpack --mode production",
+    "start": "webpack-dev-server",
+    "test": "npm run eslint"
   },
   "repository": {
     "type": "git",
@@ -21,6 +24,7 @@
   },
   "homepage": "https://github.com/Ecehuh67/Calculator#readme",
   "dependencies": {
+    "prop-types": "15.7.2",
     "react": "16.13.1",
     "react-dom": "16.13.1"
   },
@@ -30,7 +34,9 @@
     "@babel/preset-react": "7.9.4",
     "babel-loader": "8.1.0",
     "eslint": "6.8.0",
-    "eslint-config-htmlacademy": "0.5.2",
-    "eslint-plugin-react": "7.19.0"
+    "eslint-plugin-react": "7.19.0",
+    "webpack": "4.42.1",
+    "webpack-cli": "3.3.11",
+    "webpack-dev-server": "3.10.3"
   }
 }

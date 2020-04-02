@@ -1,6 +1,11 @@
+// import {useState} from 'react';
 import {numbersPanel, controlSigns, actions} from '../../consts';
 
 const Calculator = () => {
+  const [number, setNumber] = React.useState(0);
+  const [sign, setSign] = React.useState('');
+  const [isSum, setSum] = React.useState(false);
+  const [num1, setNum1] = React.useState(0);
 
   return (
     <main className="main html-wrapper">
@@ -10,6 +15,7 @@ const Calculator = () => {
             <input
               className="main-section_number-output-input"
               type="text"
+              value={number}
               disabled
             />
           </div>
@@ -19,8 +25,23 @@ const Calculator = () => {
                 {
                   controlSigns.map((item, i) => {
                     return (
-                      <li className="control-panel_item panels-item" key={i}>
-                        <button className="button">{item}</button>
+                      <li
+                        className="control-panel_item panels-item"
+                        key={i}
+                        onClick={
+                          (evt) => {
+                            if (item === `AC`) {
+                              setNumber(0);
+                              setNum1(0);
+                              setSum(false)
+                            }
+                          }
+                        }
+                      >
+                        <button
+                          className="button"
+                        >{item}
+                        </button>
                       </li>
                     );
                   })
@@ -33,7 +54,20 @@ const Calculator = () => {
                     return (
                       <li
                         className={item === 0 ? "number-panel_item panels-item panels-item--zero" : "number-panel_item panels-item"}
+                        data-value={item}
                         key={[i]}
+                        onClick={
+                          (evt) => {
+                            const value = evt.currentTarget.dataset.value;
+
+                            if (number === 0 || isSum) {
+                              setNumber(value);
+                              // setBool(false);
+                            } else {
+                              setNumber(prev => prev + value);
+                            }
+                          }
+                        }
                       >
                         <button className="button">{item}</button>
                       </li>
@@ -50,7 +84,23 @@ const Calculator = () => {
                     return (
                       <li
                         className={`actions-panel_item panels-item panel-item--${actions[item]}`}
-                         key={i}
+                        data-sign={item}
+                        key={i}
+                        onClick={
+                          (evt) => {
+                            const typeAction = evt.currentTarget.dataset.sign;
+                            setSign(typeAction);
+
+                            if (num1 !==0) {
+                              const num = number;
+                              const val = eval(`${num1} ${sign} ${num}`);
+                              setNumber(val)
+                            } else {
+                              setNum1(number);
+                              setSum(true)
+                            }
+                          }
+                        }
                       >
                         <button className={`button button-additional button--${actions[item]}`}>/</button>
                       </li>

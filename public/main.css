@@ -398,7 +398,12 @@ ul {
 .main-section_number-output-input {
     flex-grow: 1;
 
+    padding: 15px;
+    box-sizing: border-box;
+
     min-height: 80px;
+
+    text-align: right;
 }
 
 .main-section_panels {

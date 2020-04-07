@@ -3,15 +3,17 @@ export const NumberContext = React.createContext();
 const NumberProvider = (props) => {
   const [number, setNumber] = React.useState(`0`);
   const [savedNumber, setSavedNumber] = React.useState(``);
-  const [functionType, setFunctionType] = React.useState(null);
+  const [functionType, setFunctionType] = React.useState(``);
+  const [isWaitingForOperand, setWaitingForOperand] = React.useState(false);
 
   const onSetDisplayValue = (num) => {
     if (number === `0` && num === `.`) {
       setNumber(number.concat(num));
     } else if (number === `0`) {
       setNumber(num);
-    } else if (savedNumber !== `` && functionType !== ``) {
-      console.log(`work`)
+    } else if (isWaitingForOperand) {
+      setNumber(num);
+      setWaitingForOperand(false);
     } else {
       setNumber(number + num);
     }
@@ -21,26 +23,29 @@ const NumberProvider = (props) => {
     setNumber(`0`);
     setSavedNumber(``);
     setFunctionType(``);
+    setWaitingForOperand(false);
   };
 
   const onFunctionButton = (type) => {
-    if (number && savedNumber && functionType) {
+    if (number && savedNumber && functionType && !isWaitingForOperand) {
       doMath(functionType);
+      console.log(`do math`);
     } else {
+      console.log(`save type`);
       setSavedNumber(number);
       setFunctionType(type);
-
+      setWaitingForOperand(true);
     }
   };
 
   const doMath = (actionType) => {
-    console.log(`called`)
+    console.log(`called`);
     setNumber(eval(`${savedNumber} ${actionType} ${number}`));
-    console.log(typeof actionType)
-    console.log(eval(`${number} ${actionType} ${savedNumber}`))
     setSavedNumber(``);
     setFunctionType(``);
   };
+
+  console.log(number, savedNumber, functionType, isWaitingForOperand);
 
   return (
     <NumberContext.Provider
@@ -49,7 +54,8 @@ const NumberProvider = (props) => {
         savedNumber,
         onSetDisplayValue,
         onClearDisplayButton,
-        onFunctionButton
+        onFunctionButton,
+        doMath
       }}
     >
       {props.children}

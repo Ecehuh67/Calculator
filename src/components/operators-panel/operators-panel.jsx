@@ -2,7 +2,7 @@ import {actions} from '../../consts';
 import {NumberContext} from '../NumberProvider/number-provider';
 
 const OperatorsPanel = (props) => {
-  const {onFunctionButton} = React.useContext(NumberContext);
+  const {onFunctionButton, doMath} = React.useContext(NumberContext);
 
   return (
     <ul className="main-section_actions-panel actions-panel ">
@@ -16,7 +16,12 @@ const OperatorsPanel = (props) => {
               onClick={
                 (evt) => {
                   const value = evt.currentTarget.dataset.sign;
-                  onFunctionButton(value);
+                  if (value === `=`) {
+                    doMath();
+                    console.log(true)
+                  } else {
+                    onFunctionButton(value);
+                  }
                 }
               }
             >

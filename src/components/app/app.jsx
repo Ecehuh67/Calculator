@@ -1,10 +1,12 @@
 import Calculator from '../calculator/calcutalor';
+import NumberProvider from '../NumberProvider/number-provider';
 
 const App = () => {
-
   return (
-    <Calculator
-    />
+    <NumberProvider>
+      <Calculator/>
+    </NumberProvider>
+
   );
 };
 

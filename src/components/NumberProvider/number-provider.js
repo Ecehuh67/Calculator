@@ -29,9 +29,9 @@ const NumberProvider = (props) => {
   const onFunctionButton = (type) => {
     if (number && savedNumber && functionType && !isWaitingForOperand) {
       doMath(functionType);
-      console.log(`do math`);
+      console.log(`did math`);
     } else {
-      console.log(`save type`);
+      console.log(`saved type`);
       setSavedNumber(number);
       setFunctionType(type);
       setWaitingForOperand(true);

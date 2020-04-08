@@ -1,4 +1,4 @@
-export const NumberContext = React.createContext();
+const NumberContext = React.createContext();
 
 const NumberProvider = (props) => {
   const [number, setNumber] = React.useState(`0`);
@@ -8,7 +8,15 @@ const NumberProvider = (props) => {
 
   const onSetDisplayValue = (num) => {
     if (number === `0` && num === `.`) {
-      setNumber(number.concat(num));
+      setNumber(number + num);
+    } else if (num === `.`) {
+      const isContainedDot = number.includes(`.`);
+
+      if (isContainedDot) {
+        setNumber(number);
+      } else {
+        setNumber(number.concat(num));
+      }
     } else if (number === `0`) {
       setNumber(num);
     } else if (isWaitingForOperand) {
@@ -26,21 +34,33 @@ const NumberProvider = (props) => {
     setWaitingForOperand(false);
   };
 
+  const changeSign = () => {
+    +number !== 0 ? setNumber((+number * -1).toString()) : ``;
+    return null;
+  };
+
+  const getPercentOfNumber = () => {
+    if (+number !== 0) {
+      setNumber((+number * 0.01).toString());
+    }
+  };
+
   const onFunctionButton = (type) => {
     if (number && savedNumber && functionType && !isWaitingForOperand) {
       doMath(functionType);
-      console.log(`did math`);
     } else {
-      console.log(`saved type`);
       setSavedNumber(number);
       setFunctionType(type);
       setWaitingForOperand(true);
     }
   };
 
+  const onEqualSign = () => {
+    doMath(functionType);
+  };
+
   const doMath = (actionType) => {
-    console.log(`called`);
-    setNumber(eval(`${savedNumber} ${actionType} ${number}`));
+    setNumber(eval(`${savedNumber} ${actionType} ${number}`).toString());
     setSavedNumber(``);
     setFunctionType(``);
   };
@@ -55,7 +75,10 @@ const NumberProvider = (props) => {
         onSetDisplayValue,
         onClearDisplayButton,
         onFunctionButton,
-        doMath
+        doMath,
+        changeSign,
+        getPercentOfNumber,
+        onEqualSign
       }}
     >
       {props.children}
@@ -64,3 +87,4 @@ const NumberProvider = (props) => {
 };
 
 export default NumberProvider;
+export {NumberContext};

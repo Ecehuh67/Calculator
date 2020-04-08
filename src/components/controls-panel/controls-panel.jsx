@@ -2,7 +2,7 @@ import {controlSigns} from '../../consts';
 import {NumberContext} from '../NumberProvider/number-provider';
 
 const ControlPanel = () => {
-  const {onClearDisplayButton} = React.useContext(NumberContext);
+  const {onClearDisplayButton, changeSign, getPercentOfNumber} = React.useContext(NumberContext);
 
   return (
     <ul className="main-section_control-panel control-panel">
@@ -13,6 +13,12 @@ const ControlPanel = () => {
           switch (item) {
             case controlSigns[0]:
               functionCallback = onClearDisplayButton;
+              break;
+            case controlSigns[1]:
+              functionCallback = changeSign;
+              break;
+            case controlSigns[2]:
+              functionCallback = getPercentOfNumber;
               break;
           }
 

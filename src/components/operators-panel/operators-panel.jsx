@@ -1,7 +1,7 @@
 import {actions} from '../../consts';
 import {NumberContext} from '../NumberProvider/number-provider';
 
-const OperatorsPanel = (props) => {
+const OperatorsPanel = () => {
   const {onFunctionButton, onEqualSign} = React.useContext(NumberContext);
 
   return (

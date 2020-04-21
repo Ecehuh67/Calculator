@@ -1,15 +1,18 @@
-import { NumberContext } from '../NumberProvider/number-provider'
+import {NumberContext} from '../NumberProvider/number-provider';
 
 const Display = () => {
   const {number} = React.useContext(NumberContext);
+
   const getNewNumber = (num) => {
     const isContainedDotSign = number.toString().includes(`.`);
-    if (!isContainedDotSign) {
-      return num;
-    } else {
+
+    if (isContainedDotSign) {
       const index = number.indexOf(`.`);
+
       return number.slice(0, index).concat(`,`).concat(number.slice(index + 1));
     }
+
+    return num;
   };
 
   return (

@@ -1,7 +1,7 @@
 import Calculator from '../calculator/calcutalor';
 import NumberProvider from '../NumberProvider/number-provider';
 
-const App = () => {
+const App: React.FunctionComponent = () => {
   return (
     <NumberProvider>
       <Calculator/>

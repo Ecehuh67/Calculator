@@ -2,14 +2,15 @@ const path = require(`path`);
 const webpack = require(`webpack`);
 
 module.exports = {
-  entry: `./src/index.js`,
+  entry: `./src/index.tsx`,
   resolve: {
-    extensions: [`.js`, `.jsx`]
+    extensions: [`.ts`, `.tsx`, `.js`, `json`, `.jsx`]
   },
   plugins: [
     new webpack.ProvidePlugin({
       React: `react`,
-      PropTypes: `prop-types`
+      ReactDOM: 'react-dom',
+      // PropTypes: `prop-types`
     })
   ],
   output: {
@@ -30,6 +31,10 @@ module.exports = {
         use: {
           loader: `babel-loader`,
         },
+      },
+      {
+        test: /\.(tsx|ts)?$/,
+        loader: `ts-loader`
       }
     ],
   },

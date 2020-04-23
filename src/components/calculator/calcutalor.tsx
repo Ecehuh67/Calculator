@@ -4,7 +4,7 @@ import NumbersPanel from '../numbers-panel/numbers-panel';
 import OperatorsPanel from '../operators-panel/operators-panel';
 
 
-const Calculator = () => {
+const Calculator: React.FunctionComponent = () => {
 
   return (
     <main className="main html-wrapper">

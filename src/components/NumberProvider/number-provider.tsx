@@ -32,6 +32,8 @@ const NumberProvider = (props: NumberProps) => {
         setNumber(number);
       } else {
         setNumber(number.concat(num));
+        console.log(number)
+        console.log('yes')
       }
     } else if (number === `0`) {
       setNumber(num);
@@ -79,6 +81,18 @@ const NumberProvider = (props: NumberProps) => {
 
   const doMath = (actionType: string): void => {
     // eslint-disable-next-line no-eval
+    let value = eval(`${savedNumber} ${actionType} ${number}`).toString();
+    
+    if (value.length > 17) {
+      const firstNumber = savedNumber.length;
+      const secondNumber = number.length;
+      const length = Math.max(firstNumber, secondNumber);
+
+
+      value = eval(`${savedNumber} ${actionType} ${number}`).toPrecision(length).toString();
+    }
+    console.log(value)
+
     setNumber(eval(`${savedNumber} ${actionType} ${number}`).toString());
     setSavedNumber(``);
     setFunctionType(``);

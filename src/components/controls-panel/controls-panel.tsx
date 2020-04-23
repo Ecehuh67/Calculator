@@ -1,13 +1,13 @@
 import {controlSigns} from '../../consts';
 import {NumberContext} from '../NumberProvider/number-provider';
 
-const ControlPanel = () => {
+const ControlPanel: React.FunctionComponent = () => {
   const {onClearDisplayButton, changeSign, getPercentOfNumber} = React.useContext(NumberContext);
 
   return (
     <ul className="main-section_control-panel control-panel">
       {
-        controlSigns.map((item, i) => {
+        controlSigns.map((item: string, i: number) => {
           let functionCallback = null;
 
           switch (item) {

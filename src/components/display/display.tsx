@@ -1,9 +1,9 @@
 import {NumberContext} from '../NumberProvider/number-provider';
 
-const Display = () => {
+const Display: React.FunctionComponent = () => {
   const {number} = React.useContext(NumberContext);
 
-  const getNewNumber = (num) => {
+  const getNewNumber = (num: string): string => {
     const isContainedDotSign = number.toString().includes(`.`);
 
     if (isContainedDotSign) {

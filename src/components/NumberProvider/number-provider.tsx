@@ -1,4 +1,4 @@
-import {PROHIBITION_LENGTH, DEFAULT_VALUE, DOT_SIGN} from '../../consts';
+import {PROHIBITION_LENGTH, DEFAULT_VALUE, DOT_SIGN, DEFAULT_CAPACITY} from '../../consts';
 
 // Type a case we is getting only a node through props 
 type NumberProps = {
@@ -42,16 +42,12 @@ const NumberProvider = (props: NumberProps) => {
     setNumber(newNumber)
   }
 
-  console.log('number', number)
-  console.log('savNum', savedNumber)
-  console.log('operator', functionType)
-  console.log(isWaitingForOperand)
-
+  // Function which controls view of the display. Main logic for number panel 
   const onSetDisplayValue = (num: string): void => {
     switch(true) {
       case savedNumber !== '' && num === DOT_SIGN && isWaitingForOperand:
-        setNumber(DEFAULT_VALUE + num)
-        console.log('work 0')
+        setNumber(DEFAULT_VALUE + num);
+        setWaitingForOperand(false);
         break;
       case number === DEFAULT_VALUE && num === DOT_SIGN:
         setNumber(number + num);
@@ -68,41 +64,16 @@ const NumberProvider = (props: NumberProps) => {
         setNumber(num)
         break;
       case isWaitingForOperand:
-        if (number.includes(DEFAULT_VALUE + DOT_SIGN)) {
-          setNumber(number + num)
-        } else {
-          setNumber(num);
-        }
+        setNumber(num);
         setWaitingForOperand(false);
         break;
       case number !== DEFAULT_VALUE:
         setNumber(number + num);
         break;
     }
-
   }
 
-  // const onSetDisplayValue = (num: string): void => {
-  //   if (number === `0` && num === `.`) {
-  //     setNumber(number + num);
-  //   } else if (num === `.` && !savedNumber && !functionType) {
-  //     const isContainedDot: boolean = number.includes(`.`);
-
-  //     if (isContainedDot) {
-  //       setNumber(number);
-  //     } else {
-  //       setNumber(number.concat(num));
-  //     }
-  //   } else if (number === `0`) {
-  //     setNumber(num);
-  //   } else if (isWaitingForOperand) {
-  //     setNumber(num);
-  //     setWaitingForOperand(false);
-  //   } else {
-  //     setNumber(number + num);
-  //   }
-  // };
-
+  // Reset calculator to an initial state
   const onClearDisplayButton = (): void => {
     setNumber(`0`);
     setSavedNumber(``);
@@ -110,6 +81,7 @@ const NumberProvider = (props: NumberProps) => {
     setWaitingForOperand(false);
   };
 
+  // Change a sign of number to opposite 
   const changeSign = (): void => {
     if (+number !== 0) {
       setNumber((+number * -1).toString());
@@ -117,12 +89,14 @@ const NumberProvider = (props: NumberProps) => {
     return null;
   };
 
+  // Convert number to percents
   const getPercentOfNumber = (): void => {
     if (+number !== 0) {
       setNumber((+number * 0.01).toString());
     }
   };
 
+  // Describe functions for panel with operators of actions
   const onFunctionButton = (type: string): void => {
     if (number && savedNumber && functionType && !isWaitingForOperand) {
       doMath(functionType);
@@ -133,27 +107,34 @@ const NumberProvider = (props: NumberProps) => {
     }
   };
 
+  // Distinguish equal sign into separate function
   const onEqualSign = (): void => {
     doMath(functionType);
   };
 
+  // Function for calculating numerics
   const doMath = (actionType: string): void => {
     // eslint-disable-next-line no-eval
     let value = eval(`${savedNumber} ${actionType} ${number}`).toString();
-    
-    // if (value.length > 17) {
-    //   const firstNumber = savedNumber.length;
-    //   const secondNumber = number.length;
-    //   const length = Math.max(firstNumber, secondNumber);
+    const isDot = value.includes('.');
 
-    //   value = eval(`${savedNumber} ${actionType} ${number}`).toPrecision(length).toString();
-    // }
+    if (isDot) {
+      const capacityLength = value.slice(0, value.length - DEFAULT_CAPACITY).length;
+      const length = Math.max(savedNumber.length, number.length) - DEFAULT_CAPACITY;
 
-    setNumber(eval(`${savedNumber} ${actionType} ${number}`).toString());
+      if (capacityLength > 15) {
+        value = eval(`${savedNumber} ${actionType} ${number}`)
+          .toString()
+          .slice(0, length + DEFAULT_CAPACITY);
+      }
+    }
+
+    setNumber(value);
     setSavedNumber(``);
     setFunctionType(``);
   };
 
+  // Describe object for using it in the Context to make it shorter 
   const sampleAppContext: NumberInterface = {
       number,
       savedNumber,

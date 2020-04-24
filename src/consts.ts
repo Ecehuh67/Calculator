@@ -9,6 +9,7 @@ export enum actions {
   '=' = `equal`
 };
 
-export const PROHIBITION_LENGTH = 15;
-export const DEFAULT_VALUE = '0';
-export const DOT_SIGN = '.';
+export const PROHIBITION_LENGTH: number = 15;
+export const DEFAULT_VALUE: string = '0';
+export const DOT_SIGN: string = '.';
+export const DEFAULT_CAPACITY: number = 2;

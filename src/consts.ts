@@ -7,4 +7,8 @@ export enum actions {
   '-' = `subtraction`,
   '+' = `addition`,
   '=' = `equal`
-}
+};
+
+export const PROHIBITION_LENGTH = 15;
+export const DEFAULT_VALUE = '0';
+export const DOT_SIGN = '.';

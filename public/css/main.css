@@ -361,14 +361,9 @@ ul {
 }
 
 .html-wrapper {
-    box-sizing: border-box;
-    padding: 25px;
-    padding-right: 40px;
-    margin: 20% auto;
-
-    width: 400px;
-
-    border: 1px solid black;
+    display: flex;
+    justify-content: center;
+    margin: 10% auto;
 }
 
 .main {
@@ -381,10 +376,17 @@ ul {
 
 }
 
+.main-section {
+    padding: 20px;
+    box-sizing: border-box;
+    width: 400px;
+
+    border: 1px solid black;
+}
+
 .main-section_wrapper {
     display: flex;
     flex-direction: column;
-    flex-grow: 1;
 }
 
 .main-section_number-output {
@@ -402,6 +404,7 @@ ul {
     box-sizing: border-box;
 
     min-height: 80px;
+    min-width: 100px;
 
     text-align: right;
 }
@@ -415,6 +418,8 @@ ul {
     display: flex;
     flex-direction: column;
     flex-wrap: wrap;
+
+    
 }
 
 .main-section_control-panel {

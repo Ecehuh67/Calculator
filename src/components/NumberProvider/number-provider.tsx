@@ -25,7 +25,7 @@ const NumberProvider = (props: NumberProps) => {
   const onSetDisplayValue = (num: string): void => {
     if (number === `0` && num === `.`) {
       setNumber(number + num);
-    } else if (num === `.`) {
+    } else if (num === `.` && !savedNumber && !functionType) {
       const isContainedDot: boolean = number.includes(`.`);
 
       if (isContainedDot) {
@@ -37,6 +37,7 @@ const NumberProvider = (props: NumberProps) => {
       }
     } else if (number === `0`) {
       setNumber(num);
+      console.log('no')
     } else if (isWaitingForOperand) {
       setNumber(num);
       setWaitingForOperand(false);

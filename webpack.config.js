@@ -1,3 +1,4 @@
+/* eslint-disable no-undef */
 const path = require(`path`);
 const webpack = require(`webpack`);
 
@@ -9,8 +10,7 @@ module.exports = {
   plugins: [
     new webpack.ProvidePlugin({
       React: `react`,
-      ReactDOM: 'react-dom',
-      // PropTypes: `prop-types`
+      ReactDOM: `react-dom`,
     })
   ],
   output: {

@@ -1,6 +1,11 @@
 {
   "presets": [
     "@babel/preset-react",
-    "@babel/preset-env"
+    // necessary for jest
+    ["@babel/preset-env", {
+      "targets": {
+        "node": "current"
+      }
+    }]
   ]
 }

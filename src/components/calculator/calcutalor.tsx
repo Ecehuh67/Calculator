@@ -2,9 +2,17 @@ import Display from '../display/display';
 import ControlPanel from '../controls-panel/controls-panel';
 import NumbersPanel from '../numbers-panel/numbers-panel';
 import OperatorsPanel from '../operators-panel/operators-panel';
+import {NumberContext} from '../NumberProvider/number-provider';
 
 
 const Calculator: React.FunctionComponent = () => {
+  const {onKeyDown} = React.useContext(NumberContext);
+
+  React.useEffect(() => {
+    document.addEventListener(`keydown`, onKeyDown);
+
+    return () => document.removeEventListener(`keydown`, onKeyDown);
+  });
 
   return (
     <main className="main html-wrapper">

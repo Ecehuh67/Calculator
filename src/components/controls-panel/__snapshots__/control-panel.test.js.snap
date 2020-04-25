@@ -1,0 +1,41 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`render correctly 1`] = `
+<ul
+  className="main-section_control-panel control-panel"
+>
+  <li
+    className="control-panel_item panels-item"
+    data-key="AC"
+    onClick={[Function]}
+  >
+    <button
+      className="button"
+    >
+      AC
+    </button>
+  </li>
+  <li
+    className="control-panel_item panels-item"
+    data-key="+/-"
+    onClick={[Function]}
+  >
+    <button
+      className="button"
+    >
+      +/-
+    </button>
+  </li>
+  <li
+    className="control-panel_item panels-item"
+    data-key="%"
+    onClick={[Function]}
+  >
+    <button
+      className="button"
+    >
+      %
+    </button>
+  </li>
+</ul>
+`;

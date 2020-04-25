@@ -1,2 +1,2 @@
 window.React = require(`react`);
-window.renderer = require(`renderer`);
+window.renderer = require(`react-test-renderer`);

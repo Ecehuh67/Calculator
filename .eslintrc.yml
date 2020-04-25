@@ -16,10 +16,9 @@ plugins: ['react']
 
 globals:
   React: true
-  PropTypes: true
   renderer: true
-  Enzyme: true
-  Adapter: true
+  # Enzyme: true
+  # Adapter: true
 
 rules:
   react/react-in-jsx-scope: 0

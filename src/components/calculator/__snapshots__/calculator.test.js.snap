@@ -1,0 +1,270 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Render Calculator correctly 1`] = `
+<main
+  className="main html-wrapper"
+>
+  <section
+    className="main-section"
+  >
+    <div
+      className="main-section_wrapper"
+    >
+      <div
+        className="main-section_number-output"
+      >
+        <input
+          className="main-section_number-output-input"
+          disabled={true}
+          type="text"
+          value="0"
+        />
+      </div>
+      <div
+        className="main-section_panels"
+      >
+        <div
+          className="main-section_buttons-panel"
+        >
+          <ul
+            className="main-section_control-panel control-panel"
+          >
+            <li
+              className="control-panel_item panels-item"
+              data-key="AC"
+              onClick={[Function]}
+            >
+              <button
+                className="button"
+              >
+                AC
+              </button>
+            </li>
+            <li
+              className="control-panel_item panels-item"
+              data-key="+/-"
+              onClick={[Function]}
+            >
+              <button
+                className="button"
+              >
+                +/-
+              </button>
+            </li>
+            <li
+              className="control-panel_item panels-item"
+              data-key="%"
+              onClick={[Function]}
+            >
+              <button
+                className="button"
+              >
+                %
+              </button>
+            </li>
+          </ul>
+          <ul
+            className="main-section_numbers-panel number-panel"
+          >
+            <li
+              className="number-panel_item panels-item"
+              data-value={7}
+              onClick={[Function]}
+              onKeyPress={[Function]}
+            >
+              <button
+                className="button"
+              >
+                7
+              </button>
+            </li>
+            <li
+              className="number-panel_item panels-item"
+              data-value={8}
+              onClick={[Function]}
+              onKeyPress={[Function]}
+            >
+              <button
+                className="button"
+              >
+                8
+              </button>
+            </li>
+            <li
+              className="number-panel_item panels-item"
+              data-value={9}
+              onClick={[Function]}
+              onKeyPress={[Function]}
+            >
+              <button
+                className="button"
+              >
+                9
+              </button>
+            </li>
+            <li
+              className="number-panel_item panels-item"
+              data-value={4}
+              onClick={[Function]}
+              onKeyPress={[Function]}
+            >
+              <button
+                className="button"
+              >
+                4
+              </button>
+            </li>
+            <li
+              className="number-panel_item panels-item"
+              data-value={5}
+              onClick={[Function]}
+              onKeyPress={[Function]}
+            >
+              <button
+                className="button"
+              >
+                5
+              </button>
+            </li>
+            <li
+              className="number-panel_item panels-item"
+              data-value={6}
+              onClick={[Function]}
+              onKeyPress={[Function]}
+            >
+              <button
+                className="button"
+              >
+                6
+              </button>
+            </li>
+            <li
+              className="number-panel_item panels-item"
+              data-value={1}
+              onClick={[Function]}
+              onKeyPress={[Function]}
+            >
+              <button
+                className="button"
+              >
+                1
+              </button>
+            </li>
+            <li
+              className="number-panel_item panels-item"
+              data-value={2}
+              onClick={[Function]}
+              onKeyPress={[Function]}
+            >
+              <button
+                className="button"
+              >
+                2
+              </button>
+            </li>
+            <li
+              className="number-panel_item panels-item"
+              data-value={3}
+              onClick={[Function]}
+              onKeyPress={[Function]}
+            >
+              <button
+                className="button"
+              >
+                3
+              </button>
+            </li>
+            <li
+              className="number-panel_item panels-item panels-item--zero"
+              data-value={0}
+              onClick={[Function]}
+              onKeyPress={[Function]}
+            >
+              <button
+                className="button"
+              >
+                0
+              </button>
+            </li>
+            <li
+              className="number-panel_item panels-item"
+              data-value="."
+              onClick={[Function]}
+              onKeyPress={[Function]}
+            >
+              <button
+                className="button"
+              >
+                .
+              </button>
+            </li>
+          </ul>
+        </div>
+        <div
+          className="main-section_additional-panel"
+        >
+          <ul
+            className="main-section_actions-panel actions-panel "
+          >
+            <li
+              className="actions-panel_item panels-item panel-item--division"
+              data-sign="/"
+              onClick={[Function]}
+            >
+              <button
+                className="button button-additional button--division"
+              >
+                /
+              </button>
+            </li>
+            <li
+              className="actions-panel_item panels-item panel-item--multiplication"
+              data-sign="*"
+              onClick={[Function]}
+            >
+              <button
+                className="button button-additional button--multiplication"
+              >
+                /
+              </button>
+            </li>
+            <li
+              className="actions-panel_item panels-item panel-item--subtraction"
+              data-sign="-"
+              onClick={[Function]}
+            >
+              <button
+                className="button button-additional button--subtraction"
+              >
+                /
+              </button>
+            </li>
+            <li
+              className="actions-panel_item panels-item panel-item--addition"
+              data-sign="+"
+              onClick={[Function]}
+            >
+              <button
+                className="button button-additional button--addition"
+              >
+                /
+              </button>
+            </li>
+            <li
+              className="actions-panel_item panels-item panel-item--equal"
+              data-sign="="
+              onClick={[Function]}
+            >
+              <button
+                className="button button-additional button--equal"
+              >
+                /
+              </button>
+            </li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </section>
+</main>
+`;

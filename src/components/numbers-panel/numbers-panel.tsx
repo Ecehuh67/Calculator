@@ -17,6 +17,10 @@ const NumbersPanel: React.FunctionComponent = () => {
                 const value = evt.currentTarget.dataset.value;
                 onSetDisplayValue(value);
               }}
+              onKeyPress={(evt) => {
+                const {key} = evt;
+                onSetDisplayValue(key);
+              }}
             >
               <button className="button">{item}</button>
             </li>

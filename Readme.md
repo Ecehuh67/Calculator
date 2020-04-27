@@ -6,9 +6,15 @@
   </a>
 </p>
 
-> This thing is an attempt to create a calculator with help of React for practising skills
+> This project were created with only one purpose - to practise React Context API in case of creating a calculator app. Until now, I've never tried React Hooks for managing state, so it was the first time. Also I decided to try using TypeScript. I know that's really tiny app, but as the first experience it's quite interesting.
 
 ### 🏠 [Homepage](https://github.com/Ecehuh67/Calculator#readme)
+
+## Technologies
+
+> React: Hooks, Context API
+> TypeScript
+> Jest
 
 ## Install
 

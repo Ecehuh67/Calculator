@@ -147,7 +147,7 @@ const NumberProvider = (props: NumberProps) => {
     setFunctionType(``);
   };
 
-  //
+  // Define keyboard buttons for putting value on the dispkay
   const onKeyDown = (evt: KeyboardEvent): void => {
     const key: string = evt.key;
     const isNumber: boolean = numbersPanel.toString().includes(key);

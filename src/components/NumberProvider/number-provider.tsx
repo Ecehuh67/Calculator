@@ -87,7 +87,7 @@ const NumberProvider = (props: NumberProps) => {
 
   // Reset calculator to an initial state
   const onClearDisplayButton = (): void => {
-    setNumber(`0`);
+    setNumber(DEFAULT_VALUE);
     setSavedNumber(``);
     setFunctionType(``);
     setWaitingForOperand(false);

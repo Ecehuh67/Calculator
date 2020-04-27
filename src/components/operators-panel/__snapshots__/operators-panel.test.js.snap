@@ -1,0 +1,63 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`render OperatorsPanel correctly 1`] = `
+<ul
+  className="main-section_actions-panel actions-panel "
+>
+  <li
+    className="actions-panel_item panels-item panel-item--division"
+    data-sign="/"
+    onClick={[Function]}
+  >
+    <button
+      className="button button-additional button--division"
+    >
+      /
+    </button>
+  </li>
+  <li
+    className="actions-panel_item panels-item panel-item--multiplication"
+    data-sign="*"
+    onClick={[Function]}
+  >
+    <button
+      className="button button-additional button--multiplication"
+    >
+      /
+    </button>
+  </li>
+  <li
+    className="actions-panel_item panels-item panel-item--subtraction"
+    data-sign="-"
+    onClick={[Function]}
+  >
+    <button
+      className="button button-additional button--subtraction"
+    >
+      /
+    </button>
+  </li>
+  <li
+    className="actions-panel_item panels-item panel-item--addition"
+    data-sign="+"
+    onClick={[Function]}
+  >
+    <button
+      className="button button-additional button--addition"
+    >
+      /
+    </button>
+  </li>
+  <li
+    className="actions-panel_item panels-item panel-item--equal"
+    data-sign="="
+    onClick={[Function]}
+  >
+    <button
+      className="button button-additional button--equal"
+    >
+      /
+    </button>
+  </li>
+</ul>
+`;

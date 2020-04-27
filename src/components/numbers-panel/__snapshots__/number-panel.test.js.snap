@@ -1,0 +1,140 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Render NumbersPanel correctly 1`] = `
+<ul
+  className="main-section_numbers-panel number-panel"
+>
+  <li
+    className="number-panel_item panels-item"
+    data-value={7}
+    onClick={[Function]}
+    onKeyPress={[Function]}
+  >
+    <button
+      className="button"
+    >
+      7
+    </button>
+  </li>
+  <li
+    className="number-panel_item panels-item"
+    data-value={8}
+    onClick={[Function]}
+    onKeyPress={[Function]}
+  >
+    <button
+      className="button"
+    >
+      8
+    </button>
+  </li>
+  <li
+    className="number-panel_item panels-item"
+    data-value={9}
+    onClick={[Function]}
+    onKeyPress={[Function]}
+  >
+    <button
+      className="button"
+    >
+      9
+    </button>
+  </li>
+  <li
+    className="number-panel_item panels-item"
+    data-value={4}
+    onClick={[Function]}
+    onKeyPress={[Function]}
+  >
+    <button
+      className="button"
+    >
+      4
+    </button>
+  </li>
+  <li
+    className="number-panel_item panels-item"
+    data-value={5}
+    onClick={[Function]}
+    onKeyPress={[Function]}
+  >
+    <button
+      className="button"
+    >
+      5
+    </button>
+  </li>
+  <li
+    className="number-panel_item panels-item"
+    data-value={6}
+    onClick={[Function]}
+    onKeyPress={[Function]}
+  >
+    <button
+      className="button"
+    >
+      6
+    </button>
+  </li>
+  <li
+    className="number-panel_item panels-item"
+    data-value={1}
+    onClick={[Function]}
+    onKeyPress={[Function]}
+  >
+    <button
+      className="button"
+    >
+      1
+    </button>
+  </li>
+  <li
+    className="number-panel_item panels-item"
+    data-value={2}
+    onClick={[Function]}
+    onKeyPress={[Function]}
+  >
+    <button
+      className="button"
+    >
+      2
+    </button>
+  </li>
+  <li
+    className="number-panel_item panels-item"
+    data-value={3}
+    onClick={[Function]}
+    onKeyPress={[Function]}
+  >
+    <button
+      className="button"
+    >
+      3
+    </button>
+  </li>
+  <li
+    className="number-panel_item panels-item panels-item--zero"
+    data-value={0}
+    onClick={[Function]}
+    onKeyPress={[Function]}
+  >
+    <button
+      className="button"
+    >
+      0
+    </button>
+  </li>
+  <li
+    className="number-panel_item panels-item"
+    data-value="."
+    onClick={[Function]}
+    onKeyPress={[Function]}
+  >
+    <button
+      className="button"
+    >
+      .
+    </button>
+  </li>
+</ul>
+`;

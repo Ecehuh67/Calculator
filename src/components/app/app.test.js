@@ -1,12 +1,13 @@
-import ControlPanel from './controls-panel';
+import App from './app';
 import NumberProvider from '../NumberProvider/number-provider';
 
-it(`render ControlPanel correctly`, () => {
+it(`Render App correctly`, () => {
   const tree = renderer.create(
       <NumberProvider>
-        <ControlPanel/>
+        <App/>
       </NumberProvider>
   ).toJSON();
 
   expect(tree).toMatchSnapshot();
+
 });

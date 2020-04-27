@@ -1,10 +1,10 @@
-import ControlPanel from './controls-panel';
+import OperatosPanel from './operators-panel';
 import NumberProvider from '../NumberProvider/number-provider';
 
-it(`render ControlPanel correctly`, () => {
+it(`render OperatorsPanel correctly`, ()=> {
   const tree = renderer.create(
       <NumberProvider>
-        <ControlPanel/>
+        <OperatosPanel/>
       </NumberProvider>
   ).toJSON();
 

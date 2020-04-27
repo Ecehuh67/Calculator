@@ -13,7 +13,9 @@
 ## Technologies
 
 > React: Hooks, Context API
+
 > TypeScript
+
 > Jest
 
 ## Install
